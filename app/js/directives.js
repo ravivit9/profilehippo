@@ -6,5 +6,5 @@ define(['angular', 'services'], function(angular, services) {
 			return function(scope, elm, attrs) {
 				elm.text(version);
 		};
-	}]);
+	}])
 });

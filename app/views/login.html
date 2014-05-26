@@ -1,0 +1,16 @@
+    <div class="container">
+        <hr />
+        <div class="span5" ng-controller="loginCtrl"> 
+            <form> 
+                <label>Correo</label>
+                <input type="text" ng-model="usuario" />
+                <label>Contraseña</label>
+                <input type="password" ng-model="contrasena" />
+                <br />
+                <input type="submit" value="entrar" ng-click="doLogin()" class="btn btn-primary" />
+                <div>{{aviso}}</div>
+            </form>
+        </div>
+        <!-- creamos una directiva  llamada Loged-->
+        <loged ng-hide="true"></loged>
+   </div>

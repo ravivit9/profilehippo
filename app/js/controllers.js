@@ -8,6 +8,21 @@ define(['angular', 'services'], function (angular) {
             // so that we could set "active" class based on current $location.path
             $scope.location = $location;
         }])
+        /*
+		.controller('loginCtrl', ['$scope', function ($scope) {
+            require(['controllers/loginCtrl'], function(ctrl) {
+                angular.injector(['ng']).invoke(ctrl, this, { '$scope': $scope });
+            });
+		}])*/
+		.controller('signupCtrl', ['$scope','$route', '$routeParams', '$location', function ($scope, $route, $routeParams, $location) {
+             $scope.$route = $route;
+             $scope.$location = $location;
+             $scope.$routeParams = $routeParams;
+
+            require(['controllers/signupCtrl'], function(ctrl) {
+                angular.injector(['ng']).invoke(ctrl, this, { '$scope': $scope });
+            });
+		}])
 		.controller('view1Ctrl', ['$scope', function ($scope) {
             require(['controllers/view1Ctrl'], function(ctrl) {
                 // injector method takes an array of modules as the first argument

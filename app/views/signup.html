@@ -1,0 +1,30 @@
+        <div id='dv1'>
+            <form>
+                <ul>
+                    <li class="err" ng-repeat="error in errors"> {{ error}} </li>
+                </ul>
+                <ul>
+                    <li class="info" ng-repeat="msg in msgs"> {{ msg}} </li>
+                </ul>
+                <h2>Sigup Form</h2>
+                <div>
+                    <label>Name</label> 
+                    <input type="text" ng-model="username" placeholder="User Name" style='margin-left: 22px;'> 
+                </div>
+                <div>
+                    <label>Email</label>
+                    <input type="text" ng-model="useremail" placeholder="Email" style='margin-left: 22px;'> 
+                </div>
+                <div>
+                    <label>Password</label>
+                    <input type="password" ng-model="userpassword" placeholder="Password">
+                </div>
+                <button ng-click='SignUp();' style='margin-left: 63px;margin-top:10px'>SignUp</button>
+
+<pre>$location.path() = {{$location.path()}}</pre>
+<pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
+  <pre>$route.current.params = {{$route.current.params}}</pre>
+  <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
+  <pre>$routeParams = {{$routeParams}}</pre>
+            </form>
+        </div>
