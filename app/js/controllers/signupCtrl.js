@@ -4,13 +4,13 @@ define([], function() {
                 $scope.msgs = [];
                 $scope.url = 'app/php/signup.php';    //'/signup/signup.php'
                 console.log('INSIDE SIGNUP CONTROLLER');
-                    console.log($scope.url);
  
                 $scope.SignUp = function() {
                 
                     $scope.errors.splice(0, $scope.errors.length); // remove all error messages
                     $scope.msgs.splice(0, $scope.msgs.length);
                     
+                    console.log($scope.url);
                     $http.post($scope.url, {'uname': $scope.username, 'pswd': $scope.userpassword, 'email': $scope.useremail}
                     ).success(function(data, status, headers, config) {
                         if (data.msg != '')
