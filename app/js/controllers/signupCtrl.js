@@ -10,7 +10,6 @@ define([], function() {
                     $scope.errors.splice(0, $scope.errors.length); // remove all error messages
                     $scope.msgs.splice(0, $scope.msgs.length);
                     
-                    console.log($scope.url);
                     $http.post($scope.url, {'uname': $scope.username, 'pswd': $scope.userpassword, 'email': $scope.useremail}
                     ).success(function(data, status, headers, config) {
                         if (data.msg != '')
@@ -21,6 +20,7 @@ define([], function() {
                         {
                             $scope.errors.push(data.error);
                         }
+                            console.log($scope.msgs);
                     }).error(function(data, status) { // called asynchronously if an error occurs
                         // or server returns response with an error status.
                         $scope.errors.push(status);

@@ -9,9 +9,13 @@
 #$con = mysql_connect("localhost","admin","\$sysDate1","devdb");
 #mysql_select_db('devschema', $con) or die('');
  
-mysql_connect("localhost","admin","\$sysDate1") or die(mysql_error());
+mysql_connect("localhost","profilehippo","\$sysDate1") or die(mysql_error());
 mysql_select_db("devschema") or die(mysql_error());
 
+ $data = mysql_query("SELECT * FROM login_master_t")
+ or die(mysql_error());
+ 
+ 
 $data = json_decode(file_get_contents("php://input"));
 $usrname = mysql_real_escape_string($data->uname);
 $upswd = mysql_real_escape_string($data->pswd);
@@ -29,10 +33,10 @@ $res = mysql_fetch_assoc($qry_res);
 #$hashedPW = hash('sha256', $saltedPW);
  
 if ($res['cnt'] == 0) {
-    $qry = 'INSERT INTO login_master_t (lm_fname, lm_login_pass, lm_login_email) values ("' . $usrname . '","' . $upswd . '","' . $uemail . '")';
+    $qry = 'INSERT INTO login_master_t (lm_fname, lm_login_pwd, lm_login_email) values ("' . $usrname . '","' . $upswd . '","' . $uemail . '")';
     $qry_res = mysql_query($qry);
     if ($qry_res) {
-        $arr = array('msg' => "User Created Successfully!!!", 'error' => '');
+        $arr = array('msg' => "User Created Successfully!!!", 'Success' => '');
         $jsn = json_encode($arr);
         print_r($jsn);
     } else {

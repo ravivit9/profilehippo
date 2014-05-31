@@ -9,8 +9,8 @@ define(['angular', 'app'], function(angular, app) {
 		});*/
 		$routeProvider.when('/signup', {
 			templateUrl: 'app/views/signup.html',
-			controller: 'signupCtrl',
-            action:'app/php/signup.php'
+			controller: 'signupCtrl'
+            //,action:'app/php/signup.php'
 		});
 		$routeProvider.when('/view1', {
 			templateUrl: 'app/views/view1.html',
@@ -20,8 +20,8 @@ define(['angular', 'app'], function(angular, app) {
 			templateUrl: 'app/views/view2.html',
 			controller: 'view2Ctrl'
 		});
-		//$routeProvider.otherwise({redirectTo: '/view1'});
-        $routeProvider.otherwise({redirectTo: '/signup'});
+		$routeProvider.otherwise({redirectTo: '/view1'});
+        //$routeProvider.otherwise({redirectTo: '/signup'});
 	}]);
 
 });
