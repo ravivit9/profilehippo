@@ -1,13 +1,12 @@
         <div id='dv1'>
             <form>
                 <ul>
-                    <li class="err" ng-repeat="error in errors">AA {{ error}} </li>
+                    <li class="err" ng-repeat="error in errors">{{ error}} </li>
                 </ul>
                 <ul>
-                    <li class="info" ng-repeat="msg in msgs"> BB{{ $scope.msgs}} </li>
+                    <li class="info" ng-repeat="msg in msgs">{{ msg}} </li>
                 </ul>
-                <h2>Sigup Form3</h2>
-                INFO: {{msgs}}
+                <h2>Signup Form4</h2>
                 <div>
                     <label>Name</label> 
                     <input type="text" ng-model="username" placeholder="User Name" style='margin-left: 22px;' /> 

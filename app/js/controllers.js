@@ -20,7 +20,7 @@ define(['angular', 'services'], function (angular) {
              $scope.$routeParams = $routeParams;
 
             require(['controllers/signupCtrl'], function(ctrl) {
-                angular.injector(['ng']).invoke(ctrl, this, { '$scope': $scope });
+                angular.injector(['ng']).invoke(ctrl, this, { '$scope': $scope, '$http':$http });
             });
 		}])
 		.controller('view1Ctrl', ['$scope', function ($scope) {
