@@ -14,7 +14,7 @@ define(['angular', 'services'], function (angular) {
                 angular.injector(['ng']).invoke(ctrl, this, { '$scope': $scope });
             });
 		}])*/
-		.controller('signupCtrl', ['$scope','$route', '$routeParams', '$location', function ($scope, $route, $routeParams, $location) {
+		.controller('signupCtrl', ['$scope','$route', '$routeParams', '$location','$http', function ($scope, $route, $routeParams, $location, $http) {
              $scope.$route = $route;
              $scope.$location = $location;
              $scope.$routeParams = $routeParams;

@@ -18,6 +18,7 @@ require.config({
 		},
         'bootstrap': ['jQuery']
 	},
+    urlArgs: "bust=" +  (new Date()).getTime(),
 	priority: [
 		"angular"
 	]
