@@ -23,6 +23,11 @@ define(['angular', 'services'], function (angular) {
                 angular.injector(['ng']).invoke(ctrl, this, { '$scope': $scope, '$http':$http });
             });
 		}])
+        .controller("signinCtrl", ['$scope', '$location', '$rootScope','$http', function($scope, $location, $rootScope, $http) {
+            require(['controllers/signinCtrl'], function(ctrl) {
+                angular.injector(['ng']).invoke(ctrl, this, { '$scope': $scope, '$http':$http, '$rootScope': $rootScope,'$location':$location});
+            });
+        }])
 		.controller('view1Ctrl', ['$scope', function ($scope) {
             require(['controllers/view1Ctrl'], function(ctrl) {
                 // injector method takes an array of modules as the first argument

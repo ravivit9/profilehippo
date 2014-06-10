@@ -12,18 +12,28 @@
 mysql_connect("localhost","profilehippo","\$sysDate1") or die(mysql_error());
 mysql_select_db("devschema") or die(mysql_error());
 
- $data = mysql_query("SELECT * FROM login_master_t")
- or die(mysql_error());
+$data = mysql_query("SELECT * FROM members") or die(mysql_error());
  
  
 $data = json_decode(file_get_contents("php://input"));
-$usrname = mysql_real_escape_string($data->uname);
-$upswd = mysql_real_escape_string($data->pswd);
+#$usrname = mysql_real_escape_string($data->uname);
+#$upswd = mysql_real_escape_string($data->pswd);
+#$uemail = mysql_real_escape_string($data->email);
+
+if(isset($data->ufname))
+$usrfname = mysql_real_escape_string($data->ufname);
+
+
+if(isset($data->ulname))
+$usrlname = mysql_real_escape_string($data->ulname);
+
+#$udispname = mysql_real_escape_string($data->udispname);
+$pwd = mysql_real_escape_string($data->pwd);
 $uemail = mysql_real_escape_string($data->email);
 
-
  
-$qry_em = 'select count(*) as cnt from login_master_t where lm_login_email ="' . $uemail . '"';
+#$qry_em = 'select count(*) as cnt from login_master_t where lm_login_email ="' . $uemail . '"';
+$qry_em = 'select count(*) as cnt from members where mem_email_id ="' . $uemail . '"';
 $qry_res = mysql_query($qry_em);
 $res = mysql_fetch_assoc($qry_res);
  
@@ -33,7 +43,8 @@ $res = mysql_fetch_assoc($qry_res);
 #$hashedPW = hash('sha256', $saltedPW);
  
 if ($res['cnt'] == 0) {
-    $qry = 'INSERT INTO login_master_t (lm_fname, lm_login_pwd, lm_login_email) values ("' . $usrname . '","' . $upswd . '","' . $uemail . '")';
+    #$qry = 'INSERT INTO login_master_t (lm_fname, lm_login_pwd, lm_login_email) values ("' . $usrname . '","' . $upswd . '","' . $uemail . '")';
+    $qry = 'INSERT INTO members (mem_first_name, mem_last_name, mem_password, mem_email_id)values ("' . $usrfname . '","' . $usrlname . '","' . $pwd . '","' . $uemail . '")';
     $qry_res = mysql_query($qry);
     if ($qry_res) {
         $arr = array('msg' => "User Created Successfully!!!", 'Success' => '');

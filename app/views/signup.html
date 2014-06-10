@@ -3,41 +3,41 @@
 <div class="row">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 		<form role="form">
+                <ul>
+                    <li class="err" ng-repeat="error in errors">{{ error}} </li>
+                </ul>
+                <ul>
+                    <li class="info" ng-repeat="msg in msgs">{{ msg}} </li>
+                </ul>
 			<h2>Please Sign Up <small>It's free and always will be.</small></h2>
-			<hr class="colorgraph" />
+			<hr class="colorgraph">
 			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-5">
+				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-                        <input type="text" name="first_name" id="first_name" class="form-control input-md" placeholder="First Name" tabindex="1"/>
+                        <input ng-model="userfirstname" type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
 					</div>
 				</div>
-				<div class="col-xs-12 col-sm-6 col-md-5">
+				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<input type="text" name="last_name" id="last_name" class="form-control input-md" placeholder="Last Name" tabindex="2"/>
+						<input ng-model="userlastname" type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
 					</div>
 				</div>
 			</div>
-            <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-10">
 			<div class="form-group">
-				<input type="text" name="display_name" id="display_name" class="form-control input-md" placeholder="Display Name" tabindex="3"/>
+				<input ng-model="userdisplayname" type="text" name="display_name" id="display_name" class="form-control input-lg" placeholder="Display Name" tabindex="3">
 			</div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-10">
 			<div class="form-group">
-				<input type="email" name="email" id="email" class="form-control input-md" placeholder="Email Address" tabindex="4"/>
+				<input ng-model="useremail"  type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
 			</div>
-            </div>
-            </div>
 			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-5">
+				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<input type="password" name="password" id="password" class="form-control input-md" placeholder="Password" tabindex="5"/>
+						<input ng-model="userpassword"  type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
 					</div>
 				</div>
-				<div class="col-xs-12 col-sm-6 col-md-5">
+				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-md" placeholder="Confirm Password" tabindex="6"/>
+						<input ng-model="userconfirmpassword" type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
 					</div>
 				</div>
 			</div>
@@ -48,15 +48,15 @@
                         <input type="checkbox" name="t_and_c" id="t_and_c" class="hidden" value="1">
 					</span>
 				</div>
-				<div class="col-xs-8 col-sm-9 col-md-7">
+				<div class="col-xs-8 col-sm-9 col-md-9">
 					 By clicking <strong class="label label-primary">Register</strong>, you agree to the <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a> set out by this site, including our Cookie Use.
 				</div>
 			</div>
 			
 			<hr class="colorgraph">
 			<div class="row">
-				<div class="col-xs-12 col-md-5"><input type="button" value="Register" ng-click='SignUp();'  class="btn btn-primary btn-block btn-md" tabindex="7" /></div>
-				<div class="col-xs-12 col-md-5"><a href="#" class="btn btn-success btn-block btn-md">Sign In</a></div>
+				<div class="col-xs-12 col-md-6"><input ng-click='SignUp();' type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
+				<div class="col-xs-12 col-md-6"><a href="#" class="btn btn-success btn-block btn-lg">Sign In</a></div>
 			</div>
 		</form>
 	</div>
@@ -85,7 +85,8 @@
 	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 </div>        
-        <div id='dv1'>
+<!--
+<div id='dv1'>
             <form>
                 <ul>
                     <li class="err" ng-repeat="error in errors">{{ error}} </li>
@@ -107,7 +108,7 @@
                     <input type="password" ng-model="userpassword" placeholder="Password" />
                 </div>
                 <button ng-click='SignUp();' style='margin-left: 63px;margin-top:10px'>SignUp</button>
-
+-->
 <!--
 <pre>$location.path() = {{$location.path()}}</pre>
 <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
