@@ -33,8 +33,12 @@ define(['angular', 'app'], function(angular, app) {
       if ($rootScope.loggedInUser == null) {
         // no logged user, redirect to /login
         if ( next.templateUrl === "app/views/signin.html") {
-        } else {
-          $location.path("/signin");
+            //console.log('one-' + next.templateUrl);
+        }else if ( next.templateUrl === "app/views/signup.html") {
+            //console.log('two-' + next.templateUrl);
+        //} else {
+            //console.log('three-' + next.templateUrl);
+          //$location.path("/signup");
         }
       }
     });

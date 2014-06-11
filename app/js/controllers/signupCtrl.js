@@ -1,5 +1,5 @@
 define([], function() {
-	return ['$scope','$http', function($scope, $http) {
+	return ['$scope','$http','$rootScope','$location', function($scope, $http,$rootScope,$location) {
                 $scope.errors = [];
                 $scope.msgs = [];
                 $scope.signupPhpUrl = 'app/php/signup.php';    //'/signup/signup.php'
@@ -17,6 +17,8 @@ define([], function() {
                         if (data.msg != '')
                         {
                             $scope.msgs.push(data.msg);
+                            //console.log('data.redirectto:'+ unescape(data.redirectto));
+                            $location.path(unescape(data.redirectto));
                         }
                         else
                         {
@@ -29,6 +31,7 @@ define([], function() {
                     }).error(function(data, status) { // called asynchronously if an error occurs
                         // or server returns response with an error status.
                         $scope.errors.push(status);
+                        $rootScope.loggedInUser =null;
                         if(!$scope.$$phase) {
                             $scope.$apply();
                         }

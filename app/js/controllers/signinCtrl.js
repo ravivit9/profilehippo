@@ -4,12 +4,6 @@ define([], function() {
                 $scope.msgs = [];
                 $scope.signinPhpUrl = 'app/php/signin.php';    //'/signup/signup.php'
 
-            $scope.login = function() {
-            $rootScope.loggedInUser = $scope.useremail;
-            $location.path("/view2");
-            };
-
-
                 $scope.SignIn = function() {
                 
                     $scope.errors.splice(0, $scope.errors.length); // remove all error messages
@@ -21,19 +15,20 @@ define([], function() {
                         if (data.msg != '')
                         {
                             $scope.msgs.push(data.msg);
+                            $rootScope.loggedInUser = $scope.useremail;
                         }
                         else
                         {
                             $scope.errors.push(data.error);
+                            $rootScope.loggedInUser =null;
                         }
                         if(!$scope.$$phase) {
                             $scope.$apply();
                         }
-                        $rootScope.loggedInUser = $scope.useremail;
-                        //$location.path("/view2");
                     }).error(function(data, status) { // called asynchronously if an error occurs
                         // or server returns response with an error status.
                         $scope.errors.push(status);
+                        $rootScope.loggedInUser =null;
                         if(!$scope.$$phase) {
                             $scope.$apply();
                         }

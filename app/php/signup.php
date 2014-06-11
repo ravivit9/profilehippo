@@ -47,7 +47,7 @@ if ($res['cnt'] == 0) {
     $qry = 'INSERT INTO members (mem_first_name, mem_last_name, mem_password, mem_email_id)values ("' . $usrfname . '","' . $usrlname . '","' . $pwd . '","' . $uemail . '")';
     $qry_res = mysql_query($qry);
     if ($qry_res) {
-        $arr = array('msg' => "User Created Successfully!!!", 'Success' => '');
+        $arr = array('msg' => "User Created Successfully!!!", 'Success' => '','redirectto' => '/signin');
         $jsn = json_encode($arr);
         print_r($jsn);
     } else {

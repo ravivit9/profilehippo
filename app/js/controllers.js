@@ -14,13 +14,13 @@ define(['angular', 'services'], function (angular) {
                 angular.injector(['ng']).invoke(ctrl, this, { '$scope': $scope });
             });
 		}])*/
-		.controller('signupCtrl', ['$scope','$route', '$routeParams', '$location','$http', function ($scope, $route, $routeParams, $location, $http) {
+		.controller('signupCtrl', ['$scope','$route', '$routeParams', '$location','$http','$rootScope', function ($scope, $route, $routeParams, $location, $http,$rootScope) {
              $scope.$route = $route;
              $scope.$location = $location;
              $scope.$routeParams = $routeParams;
 
             require(['controllers/signupCtrl'], function(ctrl) {
-                angular.injector(['ng']).invoke(ctrl, this, { '$scope': $scope, '$http':$http });
+                angular.injector(['ng']).invoke(ctrl, this, { '$scope': $scope, '$http':$http, '$rootScope': $rootScope,'$location':$location });
             });
 		}])
         .controller("signinCtrl", ['$scope', '$location', '$rootScope','$http', function($scope, $location, $rootScope, $http) {

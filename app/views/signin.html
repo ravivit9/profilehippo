@@ -3,31 +3,32 @@
 <div class="row">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 		<form role="form">
-                <ul>
-                    <li class="err" ng-repeat="error in errors">ERR:{{ error}} </li>
-                </ul>
-                <ul>
-                    <li class="info" ng-repeat="msg in msgs">MSG:{{ msg}} </li>
-                </ul>
+
 			<h2>Sign In<small></h2>
 			<hr class="colorgraph">
 			<div class="form-group">
-				<input ng-model="useremail"  type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
+				<input ng-model="useremail"  type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="1" />
 			</div>
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<input ng-model="userpassword"  type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
+						<input ng-model="userpassword"  type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="2" />
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<div class="col-xs-12 col-md-12"><input ng-click='SignIn();' type="submit" value="Sign In" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
+						<div class="col-xs-12 col-md-12"><input ng-click='SignIn();' type="submit" value="Sign In" class="btn btn-primary btn-block btn-lg" tabindex="3" /></div>
 					</div>
 				</div>
 
 			</div>
-			<hr class="colorgraph">
+			<hr class="colorgraph" />
+                <ul>
+                    <li class="err" ng-repeat="error in errors">{{error}}</li>
+                </ul>
+                <ul>
+                    <li class="info" ng-repeat="msg in msgs">{{msg}}</li>
+                </ul>            
 		</form>
 	</div>
 </div>
