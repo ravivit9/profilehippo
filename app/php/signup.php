@@ -9,7 +9,8 @@
 #$con = mysql_connect("localhost","admin","\$sysDate1","devdb");
 #mysql_select_db('devschema', $con) or die('');
  
-mysql_connect("localhost","profilehippo","\$sysDate1") or die(mysql_error());
+#000.186.239.3:3306 -- GoDaddy host 
+mysql_connect("000.186.239.3:3306","profilehippo","\$sysDate1") or die(mysql_error());
 mysql_select_db("devschema") or die(mysql_error());
 
 $data = mysql_query("SELECT * FROM members") or die(mysql_error());

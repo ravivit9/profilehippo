@@ -1,3 +1,9 @@
+/*
+        <script src="https://bootflat.github.io/bootflat/js/icheck.min.js"></script>
+        <script src="https://bootflat.github.io/bootflat/js/jquery.fs.selecter.min.js"></script>
+        <script src="https://bootflat.github.io/bootflat/js/jquery.fs.stepper.min.js"></script>
+
+*/
 require.config({
 	paths: {
 		angular: '../../bower_components/angular/angular',
@@ -18,7 +24,7 @@ require.config({
 		},
         'bootstrap': ['jQuery']
 	},
-    urlArgs: "bust=" +  (new Date()).getTime(),
+    urlArgs: "buster=" +  (new Date()).getTime(),
 	priority: [
 		"angular"
 	]
@@ -31,7 +37,7 @@ require( [
 	'angular',
 	'app',
 	'routes',
-    'bootstrap'
+    'bootstrap',
 ], function(angular, app, routes) {
 	'use strict';
 	var $html = angular.element(document.getElementsByTagName('html')[0]);

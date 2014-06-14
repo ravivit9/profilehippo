@@ -1,4 +1,5 @@
 <?php
+#000.186.239.3:3306 -- GoDaddy host
 mysql_connect("localhost","profilehippo","\$sysDate1") or die(mysql_error());
 mysql_select_db("devschema") or die(mysql_error());
 
