@@ -1,9 +1,3 @@
-/*
-        <script src="https://bootflat.github.io/bootflat/js/icheck.min.js"></script>
-        <script src="https://bootflat.github.io/bootflat/js/jquery.fs.selecter.min.js"></script>
-        <script src="https://bootflat.github.io/bootflat/js/jquery.fs.stepper.min.js"></script>
-
-*/
 require.config({
 	paths: {
 		angular: '../../bower_components/angular/angular',
@@ -11,7 +5,10 @@ require.config({
         //angularCache:'../../bower_components/angular-cache/dist/angular-cache.min',
 		angularMocks: '../../bower_components/angular-mocks/angular-mocks',
         bootstrap: '../../bower_components/bootstrap/dist/js/bootstrap.min',
-        jQuery: '../../bower_components/jquery/dist/jquery.min'
+        jQuery: '../../bower_components/jquery/dist/jquery.min',
+        icheck:'../../bower_components/Bootflat/bootflat/js/icheck.min',
+        fsselecter:'../../bower_components/Bootflat/bootflat/js/jquery.fs.selecter.min',
+        fsstepper:'../../bower_components/Bootflat/bootflat/js/jquery.fs.stepper.min'
 	},
 	baseUrl: 'app/js',
 	shim: {
@@ -22,7 +19,11 @@ require.config({
 			deps:['angular'],
 			'exports':'angular.mock'
 		},
-        'bootstrap': ['jQuery']
+        'bootstrap': ['jQuery'],
+        'icheck': ['jQuery'],
+        'fsselecter': ['jQuery'],
+        'fsstepper': ['jQuery']
+        
 	},
     urlArgs: "bust=" +  (new Date()).getTime(),
 	priority: [
@@ -30,7 +31,7 @@ require.config({
 	]
 });
 
-// manually bootstrap the app
+/* manually bootstrap the app */
 window.name = "NG_DEFER_BOOTSTRAP!";
 
 require( [
@@ -38,6 +39,9 @@ require( [
 	'app',
 	'routes',
     'bootstrap',
+    'icheck',
+    'fsselecter',
+    'fsstepper'
 ], function(angular, app, routes) {
 	'use strict';
 	var $html = angular.element(document.getElementsByTagName('html')[0]);
