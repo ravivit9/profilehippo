@@ -10,7 +10,7 @@ define([], function() {
                     $scope.msgs.splice(0, $scope.msgs.length);
 
                     //$http.post($scope.signupPhpUrl, {'uname': $scope.username, 'pswd': $scope.userpassword, 'email': $scope.useremail}
-                    $http.get($scope.signinPhpUrl, {'email': $scope.useremail, 'pwd': $scope.userpassword}
+                    $http.post($scope.signinPhpUrl, {'email': $scope.useremail, 'pwd': $scope.userpassword}
                     ).success(function(data, status, headers, config) {
                         if (data.msg != '')
                         {
