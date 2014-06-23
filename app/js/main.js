@@ -5,10 +5,7 @@ require.config({
         //angularCache:'../../bower_components/angular-cache/dist/angular-cache.min',
 		angularMocks: '../../bower_components/angular-mocks/angular-mocks',
         bootstrap: '../../bower_components/bootstrap/dist/js/bootstrap.min',
-        jQuery: '../../bower_components/jquery/dist/jquery.min',
-        icheck:'../../bower_components/Bootflat/bootflat/js/icheck.min',
-        fsselecter:'../../bower_components/Bootflat/bootflat/js/jquery.fs.selecter.min',
-        fsstepper:'../../bower_components/Bootflat/bootflat/js/jquery.fs.stepper.min'
+        jQuery: '../../bower_components/jquery/dist/jquery.min'
 	},
 	baseUrl: 'app/js',
 	shim: {
@@ -19,11 +16,7 @@ require.config({
 			deps:['angular'],
 			'exports':'angular.mock'
 		},
-        'bootstrap': ['jQuery'],
-        'icheck': ['jQuery'],
-        'fsselecter': ['jQuery'],
-        'fsstepper': ['jQuery']
-        
+        'bootstrap': ['jQuery']
 	},
     urlArgs: "bust=" +  (new Date()).getTime(),
 	priority: [
@@ -38,10 +31,7 @@ require( [
 	'angular',
 	'app',
 	'routes',
-    'bootstrap',
-    'icheck',
-    'fsselecter',
-    'fsstepper'
+    'bootstrap'
 ], function(angular, app, routes) {
 	'use strict';
 	var $html = angular.element(document.getElementsByTagName('html')[0]);
