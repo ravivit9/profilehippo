@@ -37,7 +37,7 @@ $res = mysql_fetch_assoc($qry_res);
 #$hashedPW = hash('sha256', $saltedPW);
  
 if ($res['cnt'] == 0) {
-    $arr = array('msg' => "", 'error' => 'Invalid user or password. Please check the email id / password.' . $hashedPW);
+    $arr = array('msg' => "", 'error' => 'Invalid user or password. Please check the email id / password.');
     $jsn = json_encode($arr);
     print_r($jsn);
 }else {
