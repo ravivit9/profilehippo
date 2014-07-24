@@ -45,7 +45,7 @@ if ($res['cnt'] == 0) {
     #$qry_res = mysql_query($qry);
 
     #if ($qry_res) {
-        $arr = array('msg' => "User Successfully Logged In!!!", 'Success' => '');
+        $arr = array('msg' => "User Successfully Logged In!!!", 'Success' => '','url' => 'app/php/categories.php');
         $jsn = json_encode($arr);
         print_r($jsn);
     #}
