@@ -1,13 +1,13 @@
 require.config({
 	paths: {
 		angular: '../../bower_components/angular/angular',
+        lodash: '../../bower_components/lodash/dist/lodash.min',
 		//angularRoute: '../../bower_components/angular-route/angular-route',
 		uiRouter: '../../bower_components/angular-ui-router/release/angular-ui-router.min',
         //angularCache:'../../bower_components/angular-cache/dist/angular-cache.min',
 		angularMocks: '../../bower_components/angular-mocks/angular-mocks',
         bootstrap: '../../bower_components/bootstrap/dist/js/bootstrap.min',
-        jQuery: '../../bower_components/jquery/dist/jquery.min'
-        lodash: '../../bower_components/lodash/dist/lodash.min',
+        jQuery: '../../bower_components/jquery/dist/jquery.min',
         restangular: '../../bower_components/restangular/dist/restangular.min'
 	},
 	baseUrl: 'app/js',
