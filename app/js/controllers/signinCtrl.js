@@ -13,17 +13,21 @@ define([], function() {
             ).success(function(data, status, headers, config) {
                 if (data.msg != '')
                 {
+                    console.log('ONE');
                     $scope.msgs.push(data.msg);
                     //$rootScope.loggedInUser = $scope.useremail;
                     //$rootScope.useemail = null;
                 }
                 else
                 {
+                    console.log('TWO');
                     $scope.errors.push(data.error);
                     //$rootScope.useemail = null;
                     //$rootScope.loggedInUser =null;
                 }
                 if(!$scope.$$phase) {
+
+                    console.log('THREE');
                     $scope.$apply();
                 }
                 
@@ -36,6 +40,8 @@ define([], function() {
                 
             }).error(function(data, status) { // called asynchronously if an error occurs
                 // or server returns response with an error status.
+                console.log('FOUR');
+
                 $scope.errors.push(status);
                 //$rootScope.loggedInUser =null;
                 if(!$scope.$$phase) {
