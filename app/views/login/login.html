@@ -1,0 +1,43 @@
+<div class="container">
+<div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+		<form role="form" name="loginForm"  ng-submit="login(credentials)" novalidate />
+			<h2>Login</h2>
+			<hr class="colorgraph" />
+			<div class="row">
+
+    			<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    				<input ng-model="credentials.username"  type="email" name="email" id="email" class="form-control input-md" placeholder="Email Address" tabindex="1" />
+    			</div>
+
+				<div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					<div class="form-group">
+						<input ng-model="credentials.password"  type="password" name="password" id="password" class="form-control input-md" placeholder="Password" tabindex="2" />
+					</div>
+				</div>
+				<div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					<input type="submit" value="Login" ng-click="login(credentials)" class="btn btn-primary btn-block btn-md" tabindex="3"/>
+				</div>
+
+			</div>
+			<hr class="colorgraph" />
+            <div class="alert alert-danger" ng-show="invalidLogin">Invalid Login</div>
+                <ul>
+                    <li class="err" ng-repeat="error in errors">{{error}}</li>
+                </ul>
+                <ul>
+                    <li class="info" ng-repeat="msg in msgs">{{msg}}</li>
+                </ul>            
+		</form>
+        <div class="alert alert-success" ng-show="globalMessage">{{globalMessage}}</div>
+	</div>
+<div ng-if="currentUser">Welcome, {{ currentUser.name }}</div>
+<div ng-if="isAuthorized(userRoles.admin)">You're admin.</div>
+<div ng-switch on="currentUser.role">
+  <div ng-switch-when="userRoles.admin">You're admin.</div>
+  <div ng-switch-when="userRoles.editor">You're editor.</div>
+  <!--<div ng-switch-default>You're something else.</div>-->
+</div>
+    
+</div>
+</div>        

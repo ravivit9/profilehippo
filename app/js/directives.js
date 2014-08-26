@@ -26,6 +26,15 @@ define(['angular', 'services'], function(angular, services) {
                   }
                 };
         }])
+		.directive('menuDirective', ['version', function(version) {
+            return {
+                  templateUrl: 'app/views/menu.html',
+                  restrict: 'EA',
+                  link: function postLink(scope, element, attrs) {
+                    //element.text('this is the categoryDirective directive');
+                  }
+                };
+        }])
 });
 
 

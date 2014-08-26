@@ -2,22 +2,35 @@ define(['angular', 'app'], function(angular, app) {
 	'use strict';
 
 	//return app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-    return app.config(function($stateProvider, $urlRouterProvider) {
-       $stateProvider.state('signup', {
+    return app.config(function($stateProvider, $urlRouterProvider, USER_ROLES, $httpProvider ) {
+      $httpProvider.interceptors.push([
+        '$injector',
+        function ($injector) {
+          return $injector.get('AuthInterceptor');
+        }
+      ]);
+    $stateProvider.state('signup', {
             url:'/signup',
-			templateUrl: 'app/views/signup.html',
+			templateUrl: 'app/views/signup/signup.html',
 			controller: 'signupCtrl'
 		})
-		.state('signin', {
-            url:'/signin',
-            templateUrl: 'app/views/signin.html',
-			controller: 'signinCtrl'
+		.state('login', {
+            url:'/login',
+            templateUrl: 'app/views/login/login.html',
+			controller: 'loginCtrl'
 		})
 		.state('/#', {
             url:'',
-            templateUrl: 'app/views/signin.html',
-			controller: 'signinCtrl'
+            templateUrl: 'app/views/login/login.html',
+			controller: 'loginCtrl'
 		})
+        .state('dashboard', {
+            url: '/dashboard',
+            templateUrl: 'app/views/dashboard/dashboard.html',
+            data: {
+              authorizedRoles: [USER_ROLES.admin, USER_ROLES.editor]
+            }
+          })
 		.state('/view1', {
 			templateUrl: 'app/views/view1.html',
 			controller: 'view1Ctrl'
@@ -28,6 +41,23 @@ define(['angular', 'app'], function(angular, app) {
 		});
         //$urlRouterProvider.otherwise('app/views/signin.html');
         //$urlRouterProvider.when('', 'app/views/signin.html');
+    })
+    .run(function ($rootScope, AUTH_EVENTS, AuthService) {
+      $rootScope.$on('$stateChangeStart', function (event, next) {
+        if (!next) {
+            var authorizedRoles = next.data.authorizedRoles;
+            if (!AuthService.isAuthorized(authorizedRoles)) {
+              event.preventDefault();
+              if (AuthService.isAuthenticated()) {
+                // user is not allowed
+                $rootScope.$broadcast(AUTH_EVENTS.notAuthorized);
+              } else {
+                // user is not logged in
+                $rootScope.$broadcast(AUTH_EVENTS.notAuthenticated);
+              }
+            }
+        }
+      });
     });	
     //}])
   

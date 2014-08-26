@@ -2,11 +2,13 @@ define([
 	'angular',
 	'filters',
 	'services',
+    //'factories',
 	'directives',
 	'controllers',
+    'constants',
 	//'angularRoute',
     'uiRouter',
-	], function (angular, filters, services, directives, controllers) {
+	], function (angular, filters, services, directives, controllers, constants) {
 		'use strict';
 		return angular.module('myApp', [
 			//'ngRoute',
@@ -14,6 +16,8 @@ define([
 			'myApp.controllers',
 			'myApp.filters',
 			'myApp.services',
-			'myApp.directives'
+            //'myApp.factories',
+			'myApp.directives',
+            'myApp.constants'
 		]);
 });

@@ -20,7 +20,7 @@
 }
         </style>
 	</head>
-	<body >
+	<body ng-controller="ApplicationController as ac">
         <!-- Fixed navbar -->
         <div class="navbar navbar-default navbar-fixed-top" ng-controller="menu">
             <div class="container">
@@ -30,14 +30,18 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#/signin">ProfileHippo</a>
+                    <a class="navbar-brand" href="#/login">ProfileHippo</a>
                 </div>
                 <div class="collapse navbar-collapse">
+                    <!--
                     <ul class="nav navbar-nav">
-                        <!--<li ng-class="{active: location.path() == '/view1'}"><a href="#/view1">View 1</a></li>
-                        <li ng-class="{active: location.path() == '/view2'}"><a href="#/view2">View 2</a></li>-->
                         <li ng-class="{active: location.path() == '/signup'}"><a href="#/signup">SignUp</a></li>
-                    </ul>
+                        <li ng-class="{active: location.path() == '/dashboard'}"><a href="#/dashboard">Dashboard</a></li>
+                    </ul>-->
+                    <span>
+                    <menu-Directive></menu-Directive>
+                    </span>
+                    
                 </div><!--/.nav-collapse -->
             </div>
         </div>
@@ -53,5 +57,6 @@
             </div>
         </div>
 		<script data-main="app/js/main" src="bower_components/requirejs/require.js"></script>
-	</body>
+    <div login-dialog ng-if="isLoginPage"></div>
+    </body>
 </html>

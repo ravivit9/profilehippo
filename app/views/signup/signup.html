@@ -1,0 +1,142 @@
+<div class="container">
+
+<div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+        <form role="form" name="singupForm"  ng-submit="(signupInput)" novalidate />
+                <ul>
+                    <li class="err" ng-repeat="error in errors">{{ error}} </li>
+                </ul>
+                <ul>
+                    <li class="info" ng-repeat="msg in msgs">{{ msg}} </li>
+                </ul>
+			<h2>Sign Up <small>It's free.</small></h2>
+			<hr class="colorgraph" />
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+                        <input ng-model="signupInput.firstname" type="text" name="firstname" id="firstname" class="form-control input-md" placeholder="First Name" tabindex="1" />
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input ng-model="signupInput.lastname" type="text" name="lastname" id="lastname" class="form-control input-md" placeholder="Last Name" tabindex="2" />
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<input ng-model="signupInput.displayname" type="text" name="displayname" id="displayname" class="form-control input-md" placeholder="Display Name" tabindex="3" />
+			</div>
+			<div class="form-group">
+				<input ng-model="signupInput.username"  type="email" name="email" id="email" class="form-control input-md" placeholder="Email Address" tabindex="4" />
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input ng-model="signupInput.password"  type="password" name="password" id="password" class="form-control input-md" placeholder="Password" tabindex="5" />
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input ng-model="signupInput.confirmpassword" type="password" name="confirmpassword" id="confirmpassword" class="form-control input-md" placeholder="Confirm Password" tabindex="6">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4 col-sm-3 col-md-3">
+					<span class="button-checkbox">
+						<button type="button" class="btn" data-color="info" tabindex="7">I Agree</button>
+                        <input type="checkbox" name="t_and_c" id="t_and_c" class="hidden" value="1" />
+					</span>
+				</div>
+				<div class="col-xs-8 col-sm-9 col-md-9">
+					 By clicking <strong class="label label-primary">Register</strong>, you agree to the <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a> set out by this site, including our Cookie Use.
+				</div>
+			</div>
+			
+			<hr class="colorgraph">
+			<div class="row">
+				<div class="col-xs-12 col-md-6"><input ng-click='signup(signupInput);' type="submit" value="Register" class="btn btn-primary btn-block btn-md" tabindex="7" /></div>
+				<div class="col-xs-12 col-md-6"><a href="#" class="btn btn-success btn-block btn-md">Login</a></div>
+			</div>
+		</form>
+	</div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title" id="myModalLabel">Terms & Conditions</h4>
+			</div>
+			<div class="modal-body">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">I Agree</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</div>        
+<!--
+<div id='dv1'>
+            <form>
+                <ul>
+                    <li class="err" ng-repeat="error in errors">{{ error}} </li>
+                </ul>
+                <ul>
+                    <li class="info" ng-repeat="msg in msgs">{{ msg}} </li>
+                </ul>
+                <h2>Signup Form5</h2>
+                <div>
+                    <label>Name</label> 
+                    <input type="text" ng-model="username" placeholder="User Name" style='margin-left: 22px;' /> 
+                </div>
+                <div>
+                    <label>Email</label>
+                    <input type="text" ng-model="useremail" placeholder="Email" style='margin-left: 22px;' /> 
+                </div>
+                <div>
+                    <label>Password</label>
+                    <input type="password" ng-model="userpassword" placeholder="Password" />
+                </div>
+                <button ng-click='SignUp();' style='margin-left: 63px;margin-top:10px'>SignUp</button>
+-->
+<!--
+<pre>$location.path() = {{$location.path()}}</pre>
+<pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
+  <pre>$route.current.params = {{$route.current.params}}</pre>
+  <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
+  <pre>$routeParams = {{$routeParams}}</pre>
+-->
+            </form>
+        </div>
+        
+        
+<!--
+<h3>Using SHA256 to Secure Passwords.</h3>
+<h5>This article was created by <a href="http://justcode.us" target="_blank">Benedict Lewis</a> for a blog post on using <a href="http://www.justcode.us/2013/05/using-sha256-digest-to-store-passwords/" target="_blank">SHA256 Client Side</a>. Please do not link directly to this resource, but rather link to <a href="http://www.justcode.us/2013/05/using-sha256-digest-to-store-passwords/" target="_blank">the origional post</a>. This article uses <code>sha256.js</code> which can be found <a href="http://www.bichlmeier.info/sha256.js" target="_blank">here</a>. The code contained here is licensed under the MIT license unless stated otherwise.</h5>
+<div class="input-prepend">
+    <span class="add-on">Password to be Hashed:</span>
+    <input class="span11" id="passwordInput" type="password" placeholder="Enter Password..."></input>
+</div>
+<p id="storedSHA"></p>
+<p>The above SHA256 is stored in a database, not your origional password. It is not possible to get the origional value from a SHA256 hash but as the SHA256 for a string is always the same. This means you can compare the SHA256 hash of what a person enters and the origional SHA256. If they are the same then they entered the correct password.</p>
+<div class="input-prepend">
+    <span class="add-on">Same/Another Password:</span>
+    <input class="span6" id="passwordTest" type="password" placeholder="Enter Password..."></input>
+</div>
+<p id="currentSHA"></p>
+<div class="alert alert-info">
+    <p id="status"></p>
+</div>
+<p>Because the origional password is never stored in plain text it is not possible for someone to get a users password, even if they crack the database password. <b>Don't believe me? Go look at the variables in the Javascript, you will see that the only stored values are the SHA256 hashs.</b>
+</p>
+-->        

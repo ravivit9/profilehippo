@@ -1,0 +1,13 @@
+<span>
+<ul class="nav navbar-nav">
+    <!--<li ng-class="{active: location.path() == '/view1'}"><a href="#/view1">View 1</a></li>
+    <li ng-class="{active: location.path() == '/view2'}"><a href="#/view2">View 2</a></li>-->
+    <li ng-if="!currentUser" ng-class="{active: location.path() == '/signup'}"><a href="#/signup">SignUp...</a></li>
+    <li ng-if="currentUser" ng-class="{active: location.path() == '/dashboard'}"><a href="#/dashboard">Dashboard...</a></li>
+    
+</ul>
+</span>
+
+<span class="pull-right" ng-if="currentUser">Welcome, {{ currentUser.name }}
+    <span ng-if="isAuthorized(userRoles.admin)">(Logged as admin).</span>
+</span>
