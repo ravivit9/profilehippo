@@ -27,6 +27,7 @@ define(['angular', 'app'], function(angular, app) {
         .state('dashboard', {
             url: '/dashboard',
             templateUrl: 'app/views/dashboard/dashboard.html',
+            controller: 'dashboardCtrl',
             data: {
               authorizedRoles: [USER_ROLES.admin, USER_ROLES.editor]
             }

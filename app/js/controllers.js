@@ -3,23 +3,28 @@ define(['angular', 'services', 'factories'], function (angular) {
 
 	return angular.module('myApp.controllers', ['myApp.services'])
 		// Sample controller where service is being used
-        .controller('ApplicationController', ['$scope', 'USER_ROLES', 'AuthService', function ($scope, USER_ROLES, AuthService) {
+        .controller('ApplicationController', ['$scope', 'USER_ROLES', 'AuthService', 'CSS_CLASS', function ($scope, USER_ROLES, AuthService, CSS_CLASS) {
             require(['controllers/applicationCtrl'], function(ctrl) {
-                angular.injector(['ng']).invoke(ctrl, this, { '$scope': $scope, 'USER_ROLES': USER_ROLES, 'AuthService': AuthService});
+                angular.injector(['ng']).invoke(ctrl, this, { '$scope': $scope, 'USER_ROLES': USER_ROLES, 'AuthService': AuthService, 'CSS_CLASS': CSS_CLASS});
             });
 		}])
         .controller('menu', ['$scope', '$location', function ($scope, $location) {
             // putting $location as a $scope instance variable so that we could set "active" class based on current $location.path
             $scope.location = $location;
         }])
-        .controller('loginCtrl', ['$scope', '$rootScope', 'AUTH_EVENTS', 'AuthService', '$state', function ($scope, $rootScope, AUTH_EVENTS, AuthService, $state) {
+        .controller('loginCtrl', ['$scope', '$rootScope', 'AUTH_EVENTS', 'AuthService', 'CSS_CLASS', '$state', function ($scope, $rootScope, AUTH_EVENTS, AuthService, CSS_CLASS, $state) {
             require(['controllers/login/loginCtrl'], function(ctrl) {
-                angular.injector(['ng']).invoke(ctrl, this, { '$scope': $scope, '$rootScope': $rootScope, 'AUTH_EVENTS': AUTH_EVENTS, 'AuthService': AuthService, '$state': $state});
+                angular.injector(['ng']).invoke(ctrl, this, { '$scope': $scope, '$rootScope': $rootScope, 'AUTH_EVENTS': AUTH_EVENTS, 'AuthService': AuthService, 'CSS_CLASS': CSS_CLASS, '$state': $state});
             });
 		}])
 		.controller('signupCtrl', ['$scope', '$rootScope', 'AUTH_EVENTS', 'AuthService', '$state', function ($scope, $rootScope, AUTH_EVENTS, AuthService, $state) {
             require(['controllers/signup/signupCtrl'], function(ctrl) {
                 angular.injector(['ng']).invoke(ctrl, this, { '$scope': $scope, '$rootScope': $rootScope, 'AUTH_EVENTS': AUTH_EVENTS, 'AuthService': AuthService, '$state': $state});
+            });
+		}])
+        .controller('dashboardCtrl', ['$scope', '$rootScope', 'AUTH_EVENTS', 'AuthService', 'USER_ROLES', 'CSS_CLASS', '$state', function ($scope, $rootScope, AUTH_EVENTS, AuthService, USER_ROLES, CSS_CLASS, $state) {
+            require(['controllers/dashboard/dashboardCtrl'], function(ctrl) {
+                angular.injector(['ng']).invoke(ctrl, this, { '$scope': $scope, '$rootScope': $rootScope, 'AUTH_EVENTS': AUTH_EVENTS, 'AuthService': AuthService, 'USER_ROLES': USER_ROLES, 'CSS_CLASS':CSS_CLASS, '$state': $state});
             });
 		}])
 		//.controller('signupCtrl', ['$scope','$route', '$routeParams', '$location','$http','$rootScope', function ($scope, $route, $routeParams, $location, $http,$rootScope) {

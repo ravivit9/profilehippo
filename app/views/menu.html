@@ -8,6 +8,8 @@
 </ul>
 </span>
 
-<span class="pull-right" ng-if="currentUser">Welcome, {{ currentUser.name }}
-    <span ng-if="isAuthorized(userRoles.admin)">(Logged as admin).</span>
+<span class="pull-right" ng-if="currentUser">
+    <label class="label label-primary">{{currentUser.name}}
+        <span ng-if="isAuthorized(userRoles.admin)"><label class="label label-primary">(admin)</label></span>
+    </label>
 </span>

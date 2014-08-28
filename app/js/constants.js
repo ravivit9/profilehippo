@@ -17,5 +17,11 @@ define(['angular'], function (angular) {
           admin: 'admin',
           editor: 'editor',
           guest: 'guest'
-        });
+        })
+        .constant('CSS_CLASS', {
+          info: 'info',
+          success: 'success',
+          danger: 'danger'
+        })
+        ;
 });

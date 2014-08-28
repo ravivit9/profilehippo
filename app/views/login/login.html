@@ -21,23 +21,25 @@
 
 			</div>
 			<hr class="colorgraph" />
-            <div class="alert alert-danger" ng-show="invalidLogin">Invalid Login</div>
+                <!--
                 <ul>
                     <li class="err" ng-repeat="error in errors">{{error}}</li>
                 </ul>
                 <ul>
                     <li class="info" ng-repeat="msg in msgs">{{msg}}</li>
-                </ul>            
+                </ul>-->            
 		</form>
-        <div class="alert alert-success" ng-show="globalMessage">{{globalMessage}}</div>
+        <div class="alert alert-{{css_class}}" ng-show="globalMessage">{{globalMessage}}</div>
 	</div>
+<!--
 <div ng-if="currentUser">Welcome, {{ currentUser.name }}</div>
 <div ng-if="isAuthorized(userRoles.admin)">You're admin.</div>
 <div ng-switch on="currentUser.role">
   <div ng-switch-when="userRoles.admin">You're admin.</div>
   <div ng-switch-when="userRoles.editor">You're editor.</div>
-  <!--<div ng-switch-default>You're something else.</div>-->
+  <div ng-switch-default>You're something else.</div>
 </div>
+-->
     
 </div>
 </div>        

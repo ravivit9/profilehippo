@@ -83,6 +83,7 @@ if ($rec_count==0) {
     #$arr = array('msg' => "", 'error' => 'Invalid user or password. Please check the email id / password.');
     $arr = array(
         "id" => "",
+        "msg" => "Invalid Login.",
         "user" => array(
             "status" => 401,
              "id" => "",

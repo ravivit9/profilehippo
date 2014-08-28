@@ -4,7 +4,10 @@ require.config({
         lodash: '../../bower_components/lodash/dist/lodash.min',
 		//angularRoute: '../../bower_components/angular-route/angular-route',
 		uiRouter: '../../bower_components/angular-ui-router/release/angular-ui-router.min',
-        //angularCache:'../../bower_components/angular-cache/dist/angular-cache.min',
+        angularData:'../../bower_components/angular-data/dist/angular-data.min',
+        angularCache:'../../bower_components/angular-cache/dist/angular-cache.min',
+        d3:'../../bower_components/d3/d3.min',
+        angularD3Charts:'../../bower_components/angular-charts/dist/angular-charts.min',
 		angularMocks: '../../bower_components/angular-mocks/angular-mocks',
         bootstrap: '../../bower_components/bootstrap/dist/js/bootstrap.min',
         jQuery: '../../bower_components/jquery/dist/jquery.min',
@@ -17,7 +20,9 @@ require.config({
         'uiRouter':{
             deps: ['angular']
         },
-        //'angularCache': ['angular'],
+        'angularData': ['angular'],
+        'angularCache': ['angular'],
+        'angularD3Charts': ['d3'],
 		'angularMocks': {
 			deps:['angular'],
 			'exports':'angular.mock'
@@ -42,6 +47,9 @@ require( [
 	'angular',
 	'app',
 	'ui-routes',
+    'angularData',
+    'd3',
+    'angularD3Charts',
     'bootstrap'
 ], function(angular, app, routes) {
 	'use strict';
