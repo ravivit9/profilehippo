@@ -1,6 +1,6 @@
 define ([], function() {
     return ['$scope', '$rootScope', 'AUTH_EVENTS', 'AuthService', 'USER_ROLES', '$state', function ($scope, $rootScope, AUTH_EVENTS, AuthService, USER_ROLES, $state) {
-        var isauthorized = AuthService.isAuthorized(USER_ROLES.admin);
+        var isauthorized = AuthService.isAuthorized(USER_ROLES.basic);
         if (isauthorized == false) {
             $scope.setGlobalMessage('Not Authorized to view the content', 'danger'); 
             $rootScope.$broadcast(AUTH_EVENTS.loginFailed);

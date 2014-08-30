@@ -45,7 +45,10 @@ $hashedPW = hash('sha256', $password);
 #$res= $qry_res->num_rows;
  
 
-$query = 'select * from members where mem_email_id ="' . $username . '"' . ' and mem_password="' . $hashedPW . '"';
+#$query = 'select * from members where mem_email_id ="' . $username . '"' . ' and mem_password="' . $hashedPW . '"';
+
+$query = 'SELECT mr.mem_role_type, mem.* FROM members mem JOIN member_roles mr USING (mem_role_id) where mem_email_id ="' . $username . '"' . ' and mem_password="' . $hashedPW . '"';
+
 if ($result = $link->query($query)) {
     /* fetch associative array */
     $rec_count=0;
@@ -58,7 +61,7 @@ if ($result = $link->query($query)) {
                 "status" => 200,
                  "id" => $row["mem_email_id"],
                  "name" => $row["mem_display_name"],
-                 "role" => $row["mem_type"]
+                 "role" => $row["mem_role_type"]
             )
         );    
 

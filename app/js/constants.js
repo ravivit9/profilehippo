@@ -14,7 +14,10 @@ define(['angular'], function (angular) {
         })
         .constant('USER_ROLES', {
           all: '*',
+          basic:'basic',
+          premium:'premium',
           admin: 'admin',
+          super:'super',
           editor: 'editor',
           guest: 'guest'
         })

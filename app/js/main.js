@@ -22,7 +22,7 @@ require.config({
         },
         'angularData': ['angular'],
         'angularCache': ['angular'],
-        'angularD3Charts': ['d3'],
+        'angularD3Charts': ['d3', 'angular'],
 		'angularMocks': {
 			deps:['angular'],
 			'exports':'angular.mock'
