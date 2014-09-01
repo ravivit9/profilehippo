@@ -1,6 +1,6 @@
 {
   "name": "angular-charts",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "authors": [
     "chinmaymk"
   ],
@@ -30,14 +30,14 @@
     "angular-mocks": "~1.2.16"
   },
   "homepage": "https://github.com/chinmaymk/angular-charts",
-  "_release": "0.2.4",
+  "_release": "0.2.5",
   "_resolution": {
     "type": "version",
-    "tag": "0.2.4",
-    "commit": "819aa49d8f20aed93dceb611ae04ba71da47ca78"
+    "tag": "0.2.5",
+    "commit": "73b97de5a70a247a064eb714ea639569a117990a"
   },
   "_source": "git://github.com/chinmaymk/angular-charts.git",
-  "_target": "~0.2.4",
+  "_target": "~0.2.5",
   "_originalSource": "angular-charts",
   "_direct": true
 }
