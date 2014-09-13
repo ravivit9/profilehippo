@@ -3,15 +3,15 @@ require_once('config.php');
 
 
 #000.186.239.3:3306 -- GoDaddy host
-#mysql_connect("localhost","profilehippo","\testpassword") or die(mysql_error());
+#mysql_connect("localhost","profilehippo","\$sysDate") or die(mysql_error());
 #mysql_select_db("devschema") or die(mysql_error());
 
-#mysqli_connect("localhost","root","\testpassword", "devschema") or die(mysql_error());
-#mysqli_connect("www.rbkconsultancy.co.uk","profilehippo","\testpassword", "devschema") or die(mysql_error());
+#mysqli_connect("localhost","root","\$sysDate", "devschema") or die(mysql_error());
+#mysqli_connect("www.rbkconsultancy.co.uk","profilehippo","\$sysDate", "devschema") or die(mysql_error());
 
 
-#$link = mysqli_connect("www.rbkconsultancy.co.uk","profilehippo","\testpassword", "devschema") or die(mysqli_error());
-#$link = mysqli_connect("localhost","root","\testpassword","devschema") or die("Error " . mysqli_error($link));
+#$link = mysqli_connect("www.rbkconsultancy.co.uk","profilehippo","\$sysDate", "devschema") or die(mysqli_error());
+#$link = mysqli_connect("localhost","root","\$sysDate","devschema") or die("Error " . mysqli_error($link));
 #$data  = "SELECT * FROM members" or die("Error in the consult.." . mysqli_error($link));
 
 $data = json_decode(file_get_contents("php://input"));
